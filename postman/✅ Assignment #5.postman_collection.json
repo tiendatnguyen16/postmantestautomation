@@ -124,7 +124,7 @@
 	"variable": [
 		{
 			"key": "githubProjectUrl",
-			"value": "LINK TO YOUR PROJECT",
+			"value": "https://github.com/tiendatnguyen16/postmantestautomation",
 			"type": "string"
 		}
 	]
