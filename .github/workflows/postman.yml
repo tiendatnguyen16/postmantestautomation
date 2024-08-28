@@ -25,4 +25,4 @@ jobs:
       run: npm install -g newman
 
     - name: Run Postman Collection
-      run: newman run postman/✅ Assignment #5.postman_collection.json -e postman/API Key.postman_environment.json
+      run: newman run postman/Assignment#5.postman_collection.json -e postman/API_Key.postman_environment.json
