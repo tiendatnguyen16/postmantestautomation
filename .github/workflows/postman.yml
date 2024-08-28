@@ -1,4 +1,5 @@
 name: Postman Collection Run
+
 on:
   push:
     branches:
@@ -6,6 +7,7 @@ on:
   pull_request:
     branches:
       - main
+
 jobs:
   postman:
     runs-on: ubuntu-latest
@@ -19,10 +21,13 @@ jobs:
         node-version: '20.17.0'
 
     - name: Install Postman CLI
-      run: npm install -g postman-cli
+      run: |
+        curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
 
     - name: Login to Postman CLI
       run: postman login --with-api-key ${{ secrets.POSTMAN_API_KEY }}
 
     - name: Run Postman Collection
-      run: postman collection run postman/✅\ Assignment\ \#5.postman_collection.json -e postman/API_Key.postman_environment.json
+      run: |
+        postman collection run "postman/✅\ Assignment\ \#5.postman_collection.json" \
+        -e "postman/API_Key.postman_environment.json"
