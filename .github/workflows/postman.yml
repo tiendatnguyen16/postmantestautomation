@@ -1,0 +1,28 @@
+name: Postman Collection Run
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  postman:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20.17.0'
+
+    - name: Install Newman
+      run: npm install -g newman
+
+    - name: Run Postman Collection
+      run: newman run postman/✅ Assignment #5.postman_collection.json -e postman/API Key.postman_environment.json
