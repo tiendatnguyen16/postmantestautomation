@@ -29,5 +29,5 @@ jobs:
 
     - name: Run Postman Collection
       run: |
-        postman collection run "postman/✅\ Assignment\ \#5.postman_collection.json" \
+        postman collection run "postman/✅ Assignment #5.postman_collection.json" \
         -e "postman/API_Key.postman_environment.json"
